@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Zadanie pierwsze";
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+            float a, b, c;
+            string str;
+
+            while (true)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Podaj a:");
+                str = Console.ReadLine();
+
+                try
+                {
+                    a = float.Parse(str);
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red; 
+                    Console.WriteLine("Wprowadzono liczbę w złym formacie");
+                }
+                catch (OverflowException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Wprowadzona liczba jest poza dopuszczalnym zakresem");
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Napotkano koniec strumienia");
+                }
+                Console.WriteLine("Spróbuj jeszcze raz");
+            }
+
+
+            while (true)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Podaj b:");
+                str = Console.ReadLine();
+
+                try
+                {
+                    b = float.Parse(str);
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Wprowadzono liczbę w złym formacie");
+                }
+                catch (OverflowException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Wprowadzona liczba jest poza dopuszczalnym zakresem");
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Napotkano koniec strumienia");
+                }
+                Console.WriteLine("Spróbuj jeszcze raz");
+            }
+
+
+            if (a == b)
+                Console.WriteLine("Proba dzielenia przez zero");
+
+            else
+            {
+                c = (a * a + b) / ((a + b) * (a + b));
+                Console.WriteLine("Wynik to: " + c);
+
+            }
+        }
+    }
+}
